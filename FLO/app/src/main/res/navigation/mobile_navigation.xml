@@ -14,12 +14,18 @@
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.example.flo.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
+        android:label="@string/title_search"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.example.flo.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:label="@string/title_locker"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_look"
+        android:name="com.example.flo.ui.notifications.NotificationsFragment"
+        android:label="@string/title_look"
         tools:layout="@layout/fragment_notifications" />
 </navigation>

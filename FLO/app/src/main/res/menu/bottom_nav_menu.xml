@@ -8,12 +8,17 @@
 
     <item
         android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_dashboard" />
+        android:icon="@drawable/ic_bottom_look_no_select"
+        android:title="@string/title_look" />
 
     <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/title_notifications" />
+        android:id="@+id/navigation_search"
+        android:icon="@drawable/ic_bottom_search_no_select"
+        android:title="@string/title_search" />
+
+    <item
+        android:id="@+id/navigation_locker"
+        android:icon="@drawable/ic_bottom_locker_no_select"
+        android:title="@string/title_locker" />
 
 </menu>
