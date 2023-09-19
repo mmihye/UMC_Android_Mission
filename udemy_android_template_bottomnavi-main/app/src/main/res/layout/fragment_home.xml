@@ -80,8 +80,42 @@
             android:textSize="12sp"
             android:layout_marginStart="20dp"
             android:layout_marginBottom="12dp"
-            app:layout_constraintBottom_toTopOf="@id/home_pannel_album_img_iv"
+            app:layout_constraintBottom_toTopOf="@id/home_pannel_album2_img_iv"
             app:layout_constraintStart_toStartOf="parent"/>
+
+        <ImageView
+            android:id="@+id/home_pannel_album2_img_iv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/img_album_exp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/home_pannel_album_img_iv"/>
+
+        <TextView
+            android:id="@+id/home_pannel_album2_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="In My Bed"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginStart="15dp"
+            app:layout_constraintBottom_toTopOf="@id/home_pannel_album2_singer_tv"
+            app:layout_constraintStart_toEndOf="@id/home_pannel_album2_img_iv"
+            app:layout_constraintTop_toTopOf="@+id/home_pannel_album2_img_iv"/>
+
+        <TextView
+            android:id="@+id/home_pannel_album2_singer_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="bear"
+            android:textColor="@color/white"
+            android:layout_marginStart="15dp"
+            app:layout_constraintTop_toBottomOf="@id/home_pannel_album2_title_tv"
+            app:layout_constraintStart_toEndOf="@id/home_pannel_album2_img_iv"
+            app:layout_constraintBottom_toBottomOf="@id/home_pannel_album2_img_iv"/>
+
 
         <ImageView
             android:id="@+id/home_pannel_album_img_iv"
@@ -155,7 +189,7 @@
             android:layout_height="wrap_content"
             android:text="국내"
             android:textSize="18sp"
-            android:textColor="@color/gray_color"
+            android:textColor="@color/gray"
             android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toStartOf="@id/home_today_music_global_tv"
             app:layout_constraintTop_toTopOf="@id/home_today_music_tv"/>
@@ -166,7 +200,7 @@
             android:layout_height="wrap_content"
             android:text="해외"
             android:textSize="18sp"
-            android:textColor="@color/gray_color"
+            android:textColor="@color/gray"
             android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/home_today_music_tv"/>
@@ -316,6 +350,74 @@
             app:layout_constraintStart_toStartOf="parent"/>
 
 
+        <ImageView
+            android:id="@+id/home_discovery_banner_aos"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:src="@drawable/discovery_banner_aos"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_video_Collection_singer_tv"/>
+
+        <ImageView
+            android:id="@+id/home_banner2_iv"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="10dp"
+            android:src="@drawable/img_home_viewpager_exp2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_discovery_banner_aos"/>
+
+
+        <LinearLayout
+            android:id="@+id/home_sns_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/home_banner2_iv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/home_facebook_iv"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginHorizontal="15dp"
+                android:src="@drawable/ic_main_facebook"/>
+            <ImageView
+                android:id="@+id/home_instagram_iv"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginHorizontal="15dp"
+                android:src="@drawable/ic_main_instagram"/>
+            <ImageView
+                android:id="@+id/home_youtube_iv"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginHorizontal="15dp"
+                android:src="@drawable/ic_main_youtube"/>
+            <ImageView
+                android:id="@+id/home_twitter_iv"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginHorizontal="15dp"
+                android:src="@drawable/ic_main_twitter"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray"
+            android:textSize="15sp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:text="(주)드림어스컴퍼니 사업자 정보"
+            app:layout_constraintTop_toBottomOf="@id/home_sns_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
