@@ -5,19 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.flo.databinding.FragmentLookBinding
-import com.google.android.material.tabs.TabLayoutMediator
+import com.example.flo.databinding.FragmentMusicFileBinding
 
-class LookFragment : Fragment() {
+class MusicFileFragment : Fragment() {
 
-    lateinit var binding: FragmentLookBinding
+    lateinit var binding: FragmentMusicFileBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentLookBinding.inflate(inflater, container, false)
+
+        binding = FragmentMusicFileBinding.inflate(inflater,container,false)
 
         return binding.root
     }
