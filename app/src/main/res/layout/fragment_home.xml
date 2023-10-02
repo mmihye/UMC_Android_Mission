@@ -240,17 +240,25 @@
             app:layout_constraintStart_toStartOf="parent"/>
 
 
-        <ImageView
-            android:id="@+id/home_banner_iv"
+<!--        <ImageView-->
+<!--            android:id="@+id/home_banner_iv"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="80dp"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:src="@drawable/img_home_viewpager_exp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/home_today_music_album_singer_tv"/>-->
+
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/home_banner_vp"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:scaleType="centerCrop"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/img_home_viewpager_exp"
+            android:layout_height="100dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/home_today_music_album_singer_tv"/>
-
 
         <TextView
             android:id="@+id/home_podcast_info_tv"
@@ -263,7 +271,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_banner_iv"/>
+            app:layout_constraintTop_toBottomOf="@id/home_banner_vp"/>
 
         <ImageView
             android:id="@+id/home_podcast_album_iv"
