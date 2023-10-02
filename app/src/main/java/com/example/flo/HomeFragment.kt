@@ -23,9 +23,14 @@ class HomeFragment : Fragment() {
             (context as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.main_frm,AlbumFragment()).commitAllowingStateLoss()
         }
 
-        val bannerVPAdater = BannerVPAdater(this)
-        bannerVPAdater.addFragment(BannerFragment())
-        binding.homeBannerVp.adapter = bannerVPAdater
+        val bannerAdater = BannerVPAdater(this)
+        bannerAdater.addFragment(BannerFragment(R.drawable.img_home_viewpager_exp))
+        bannerAdater.addFragment(BannerFragment(R.drawable.img_home_viewpager_exp2))
+        bannerAdater.addFragment(BannerFragment(R.drawable.img_home_viewpager_exp))
+        bannerAdater.addFragment(BannerFragment(R.drawable.img_home_viewpager_exp2))
+        bannerAdater.addFragment(BannerFragment(R.drawable.img_home_viewpager_exp))
+        bannerAdater.addFragment(BannerFragment(R.drawable.img_home_viewpager_exp2))
+        binding.homeBannerVp.adapter = bannerAdater
         binding.homeBannerVp.orientation = ViewPager2.ORIENTATION_HORIZONTAL
 
         return binding.root

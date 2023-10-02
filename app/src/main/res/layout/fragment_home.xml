@@ -258,7 +258,7 @@
             android:layout_height="100dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_today_music_album_singer_tv"/>
+            app:layout_constraintTop_toBottomOf="@id/home_today_music_album_singer_tv" />
 
         <TextView
             android:id="@+id/home_podcast_info_tv"
