@@ -23,7 +23,7 @@ class HomeFragment : Fragment() {
             (context as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.main_frm,AlbumFragment()).commitAllowingStateLoss()
         }
 
-        val bannerAdater = BannerVPAdater(this)
+        val bannerAdater = BannerVPAdapter(this)
         bannerAdater.addFragment(BannerFragment(R.drawable.img_home_viewpager_exp))
         bannerAdater.addFragment(BannerFragment(R.drawable.img_home_viewpager_exp2))
         bannerAdater.addFragment(BannerFragment(R.drawable.img_home_viewpager_exp))
