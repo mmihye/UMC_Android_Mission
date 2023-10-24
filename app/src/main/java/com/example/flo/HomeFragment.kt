@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.example.flo.databinding.FragmentHomeBinding
-import me.relex.circleindicator.CircleIndicator3
 import java.util.Timer
 import kotlin.concurrent.scheduleAtFixedRate
 
