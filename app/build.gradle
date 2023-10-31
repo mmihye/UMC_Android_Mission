@@ -41,7 +41,11 @@ dependencies {
     //circleindicator
     implementation 'me.relex:circleindicator:2.1.6'
 
+    //splashscreen
     implementation 'androidx.core:core-splashscreen:1.0.0-alpha01'
+
+    //json
+    implementation 'com.google.code.gson:gson:2.8.7'
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.0'
