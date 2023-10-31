@@ -44,16 +44,26 @@ class SongActivity : AppCompatActivity() {
 
 
     private fun initSong(){
-        if(intent.hasExtra("title") && intent.hasExtra("singer")){
-            song = Song(
-                intent.getStringExtra("title")!!,
-                intent.getStringExtra("singer")!!,
-                intent.getIntExtra("second",0),
-                intent.getIntExtra("playTime",0),
-                intent.getBooleanExtra("isPlaying",false),
-                intent.getStringExtra("music")!!
-            )
+
+        val sharedPreferences = getSharedPreferences("song", MODE_PRIVATE)
+        val songJson = sharedPreferences.getString("songData",null)
+
+        song = if(songJson == null){
+            Song("라일락","아이유(IU)",0,60,false,"music_lilac")
+        }else {
+            gson.fromJson(songJson, Song::class.java)
         }
+//        }
+//        if(intent.hasExtra("title") && intent.hasExtra("singer")){
+//            song = Song(
+//                intent.getStringExtra("title")!!,
+//                intent.getStringExtra("singer")!!,
+//                intent.getIntExtra("second",0),
+//                intent.getIntExtra("playTime",0),
+//                intent.getBooleanExtra("isPlaying",false),
+//                intent.getStringExtra("music")!!
+//            )
+//        }
         startTimer()
     }
 
@@ -62,7 +72,8 @@ class SongActivity : AppCompatActivity() {
         binding.songSingerNameTv.text = intent.getStringExtra("singer")!!
         binding.songStartTimeTv.text = String.format("%02d:%02d",song.second / 60, song.second % 60)
         binding.songEndTimeTv.text = String.format("%02d:%02d",song.playTime / 60, song.playTime % 60)
-        binding.songProgressSb.progress = (song.second * 1000 / song.playTime)
+//        binding.songProgressSb.progress = (song.second * 1000 / song.playTime)
+        binding.songProgressSb.progress=(song.second*100000)/song.playTime
 
         val music = resources.getIdentifier(song.music,"raw",this.packageName)
         mediaPlayer = MediaPlayer.create(this,music)
@@ -79,6 +90,12 @@ class SongActivity : AppCompatActivity() {
         if(isPlaying){
             binding.songMiniplayerIv.visibility = View.GONE
             binding.songPauseIv.visibility = View.VISIBLE
+
+            // 특정 시간(밀리초)으로 이동하여 재생 시작
+            val desiredTime = song.second*1000
+
+            mediaPlayer!!.seekTo(desiredTime)
+
             mediaPlayer?.start()
         } else {
             binding.songMiniplayerIv.visibility = View.VISIBLE
@@ -97,7 +114,7 @@ class SongActivity : AppCompatActivity() {
 
     inner class Timer(private val playTime: Int,var isPlaying: Boolean = true):Thread(){
 
-        private var second : Int = 0
+        private var second : Int = song.second
         private var mills: Float = 0f
 
         override fun run() {
@@ -114,7 +131,8 @@ class SongActivity : AppCompatActivity() {
                         mills += 50
 
                         runOnUiThread {
-                            binding.songProgressSb.progress = ((mills / playTime)*100).toInt()
+                            binding.songProgressSb.progress = (song.second*100000)/song.playTime+((mills / playTime)*100).toInt()
+//                            binding.songProgressSb.progress=(song.second*100000)/song.playTime
                         }
 
                         if (mills % 1000 == 0f){
